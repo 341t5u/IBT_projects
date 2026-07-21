@@ -2,7 +2,8 @@ class Account:
     def __init__(self,owner,number,balance=0):
         self.owner=owner
         self.account_number=number
-        self.__balance=balance
+        self.__balance=balance 
+        #make private
     @property
     def balance(self):
         return self.__balance
@@ -12,7 +13,7 @@ class Account:
         self.__balance += amount
 class SavingAccount(Account):
     def __init__(self, owner, number, balance=0,rate=0.05):
-        super().__init__(owner, number, balance)
+        super().__init__(owner, number, balance) #Calls the parent class constructor
         self.rate= rate
     def add_interest(self):
         self.deposit(self.balance*self.rate)
